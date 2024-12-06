@@ -39,4 +39,9 @@ export class MachineController {
   async remove(@Param('id') id: string) {
     return this.machineService.remove(id);
   }
+
+  @Get('license-plate/:licencePlate')
+  async findByLicencePlate(@Param('licencePlate') licencePlate: string) {
+    return this.machineService.findByLicencePlate(licencePlate);
+  }
 }

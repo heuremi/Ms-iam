@@ -10,5 +10,6 @@ import { MongooseModule } from '@nestjs/mongoose';
   ],
   controllers: [MachineController],
   providers: [MachineService],
+  exports: [MachineService],  
 })
 export class MachineModule {}

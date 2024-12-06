@@ -61,5 +61,10 @@ export class MachineService {
     if (result.deletedCount === 0) {
       throw new NotFoundException('La máquina no fue encontrada.');
     }
-    return result;  }
+    return result;  
+  }
+
+  async findByLicencePlate(licencePlate: string): Promise<Machine | null> {
+    return this.machineModel.findOne({ licencePlate }).exec();
+  }  
 }
